@@ -1,0 +1,150 @@
+Token	True	Pred
+==================================================
+
+<UNK>	B-Disease	O <-- ERROR
+disease	I-Disease	O <-- ERROR
+causes	O	O
+<UNK>	O	O
+inflammation	B-Disease	O <-- ERROR
+and	O	O
+pain	O	O
+.	O	O
+
+<UNK>	B-Chemical	B-Chemical
+can	O	B-Chemical <-- ERROR
+cause	O	B-Chemical <-- ERROR
+<UNK>	B-Disease	O <-- ERROR
+<UNK>	I-Disease	O <-- ERROR
+<UNK>	I-Disease	O <-- ERROR
+<UNK>	O	O
+<UNK>	O	O
+.	O	O
+
+<UNK>	B-Chemical	O <-- ERROR
+provides	O	O
+relief	O	O
+<UNK>	O	O
+arthritis	B-Disease	O <-- ERROR
+pain	O	O
+and	O	O
+inflammation	B-Disease	O <-- ERROR
+.	O	O
+
+<UNK>	B-Disease	B-Chemical <-- ERROR
+sclerosis	I-Disease	O <-- ERROR
+<UNK>	O	O
+the	O	O
+<UNK>	O	O
+<UNK>	O	O
+<UNK>	O	O
+<UNK>	O	O
+.	O	O
+
+<UNK>	O	O
+<UNK>	O	O
+often	O	O
+<UNK>	O	O
+<UNK>	B-Chemical	O <-- ERROR
+and	O	O
+<UNK>	B-Chemical	O <-- ERROR
+.	O	O
+
+<UNK>	O	B-Chemical <-- ERROR
+<UNK>	O	O
+<UNK>	B-Chemical	O <-- ERROR
+<UNK>	O	O
+<UNK>	O	O
+<UNK>	B-Chemical	O <-- ERROR
+<UNK>	I-Chemical	O <-- ERROR
+<UNK>	O	O
+<UNK>	O	O
+.	O	O
+
+<UNK>	O	B-Chemical <-- ERROR
+therapy	O	O
+includes	O	O
+<UNK>	B-Chemical	O <-- ERROR
+<UNK>	B-Chemical	O <-- ERROR
+and	O	O
+<UNK>	B-Chemical	O <-- ERROR
+for	O	O
+<UNK>	O	O
+<UNK>	O	O
+.	O	O
+
+<UNK>	B-Disease	O <-- ERROR
+is	O	O
+<UNK>	O	O
+by	O	O
+<UNK>	O	O
+<UNK>	B-Disease	O <-- ERROR
+<UNK>	O	O
+.	O	O
+
+Parkinson	B-Disease	O <-- ERROR
+disease	I-Disease	O <-- ERROR
+is	O	O
+<UNK>	O	O
+by	O	O
+tremor	B-Disease	O <-- ERROR
+and	O	O
+<UNK>	B-Disease	O <-- ERROR
+.	O	O
+
+<UNK>	B-Chemical	B-Chemical
+<UNK>	O	B-Chemical <-- ERROR
+the	O	O
+<UNK>	O	O
+<UNK>	O	O
+in	O	O
+autoimmune	B-Disease	O <-- ERROR
+<UNK>	I-Disease	O <-- ERROR
+.	O	O
+
+<UNK>	O	B-Chemical <-- ERROR
+<UNK>	O	O
+multiple	O	O
+<UNK>	B-Chemical	O <-- ERROR
+<UNK>	O	O
+for	O	O
+<UNK>	B-Disease	O <-- ERROR
+treatment	O	O
+.	O	O
+
+<UNK>	B-Chemical	B-Chemical
+therapy	O	O
+<UNK>	O	O
+<UNK>	O	O
+for	O	O
+<UNK>	B-Disease	O <-- ERROR
+<UNK>	I-Disease	O <-- ERROR
+<UNK>	I-Disease	O <-- ERROR
+.	O	O
+
+<UNK>	B-Chemical	O <-- ERROR
+<UNK>	O	O
+<UNK>	O	O
+<UNK>	B-Disease	O <-- ERROR
+pain	I-Disease	O <-- ERROR
+and	O	O
+<UNK>	B-Disease	O <-- ERROR
+.	O	O
+
+<UNK>	B-Chemical	B-Chemical
+therapy	O	O
+<UNK>	O	O
+<UNK>	B-Chemical	O <-- ERROR
+<UNK>	O	O
+in	O	O
+<UNK>	B-Disease	O <-- ERROR
+<UNK>	I-Disease	O <-- ERROR
+.	O	O
+
+<UNK>	B-Chemical	B-Chemical
+overdose	O	O
+can	O	O
+cause	O	O
+severe	O	O
+<UNK>	B-Disease	O <-- ERROR
+.	O	O
+

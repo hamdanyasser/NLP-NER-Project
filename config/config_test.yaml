@@ -1,0 +1,91 @@
+# Test configuration with reduced epochs for quick pipeline verification
+
+# Data paths
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_file: "data/processed/train.txt"
+  dev_file: "data/processed/dev.txt"
+  test_file: "data/processed/test.txt"
+
+# Model artifacts
+artifacts:
+  save_dir: "artifacts"
+  vocab_file: "artifacts/vocab.pkl"
+  model_checkpoint: "artifacts/best_model.pt"
+
+# Model architecture
+model:
+  embedding_dim: 50
+  pretrained_embeddings: null
+  freeze_embeddings: false
+  hidden_size: 128
+  num_layers: 1
+  dropout: 0.3
+  bidirectional: true
+  use_char_features: false
+  char_embedding_dim: 30
+  char_hidden_size: 50
+  use_crf: true
+
+# Training parameters
+training:
+  batch_size: 16
+  learning_rate: 0.001
+  num_epochs: 3
+  optimizer: "adam"
+  weight_decay: 0.0001
+  use_lr_scheduler: false
+  lr_scheduler: "step"
+  lr_step_size: 10
+  lr_gamma: 0.1
+  gradient_clip: 5.0
+  early_stopping: false
+  patience: 5
+  save_best_only: true
+  metric_for_best: "f1"
+
+# Evaluation parameters
+evaluation:
+  batch_size: 32
+  output_predictions: true
+  predictions_file: "reports/predictions.txt"
+
+# Data processing
+preprocessing:
+  lowercase: false
+  min_word_freq: 1
+  max_seq_length: 128
+
+# Random seeds for reproducibility
+random_seed: 42
+torch_seed: 42
+numpy_seed: 42
+
+# Device
+device: "cpu"
+
+# Logging
+logging:
+  log_level: "INFO"
+  log_interval: 5
+  use_tensorboard: false
+  tensorboard_dir: "runs"
+
+# Entity types (BIO tagging)
+entity_types:
+  - "Chemical"
+  - "Disease"
+
+# Special tokens
+special_tokens:
+  pad_token: "<PAD>"
+  unk_token: "<UNK>"
+
+# Tag vocabulary
+tags:
+  - "O"
+  - "B-Chemical"
+  - "I-Chemical"
+  - "B-Disease"
+  - "I-Disease"

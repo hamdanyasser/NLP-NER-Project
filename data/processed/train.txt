@@ -1,0 +1,499 @@
+Echocardiogram	O
+demonstrated	O
+severe	O
+mitral	B-Disease
+regurgitation	I-Disease
+.	O
+
+Morphine	B-Chemical
+is	O
+essential	O
+for	O
+severe	O
+cancer	B-Disease
+pain	O
+management	O
+.	O
+
+Lisinopril	B-Chemical
+effectively	O
+lowers	O
+blood	O
+pressure	O
+in	O
+hypertension	B-Disease
+.	O
+
+Blood	O
+cultures	O
+grew	O
+Staphylococcus	O
+aureus	O
+bacteremia	B-Disease
+.	O
+
+Rheumatoid	B-Disease
+arthritis	I-Disease
+causes	O
+joint	O
+inflammation	B-Disease
+and	O
+destruction	O
+.	O
+
+Cisplatin	B-Chemical
+chemotherapy	O
+often	O
+results	O
+in	O
+nephrotoxicity	B-Disease
+.	O
+
+Benzodiazepines	B-Chemical
+enhance	O
+GABA	B-Chemical
+receptor	O
+activity	O
+in	O
+anxiety	B-Disease
+.	O
+
+Antipsychotics	O
+block	O
+dopamine	B-Chemical
+D2	O
+receptors	O
+in	O
+schizophrenia	B-Disease
+.	O
+
+Interferon	B-Chemical
+beta	I-Chemical
+reduces	O
+relapse	O
+rates	O
+in	O
+multiple	B-Disease
+sclerosis	I-Disease
+.	O
+
+Heparin	B-Chemical
+prevents	O
+thrombosis	B-Disease
+in	O
+hospitalized	O
+patients	O
+.	O
+
+Dopamine	B-Chemical
+agonists	O
+are	O
+used	O
+in	O
+early	O
+Parkinson	B-Disease
+disease	I-Disease
+.	O
+
+Epinephrine	B-Chemical
+is	O
+the	O
+first-line	O
+treatment	O
+for	O
+anaphylaxis	B-Disease
+.	O
+
+Chronic	B-Disease
+obstructive	I-Disease
+pulmonary	I-Disease
+disease	I-Disease
+impairs	O
+breathing	O
+function	O
+.	O
+
+Heart	B-Disease
+failure	I-Disease
+results	O
+in	O
+fluid	O
+retention	O
+and	O
+dyspnea	B-Disease
+.	O
+
+Atorvastatin	B-Chemical
+reduces	O
+cholesterol	B-Chemical
+levels	O
+and	O
+cardiovascular	O
+risk	O
+.	O
+
+Nitroglycerin	B-Chemical
+provides	O
+rapid	O
+relief	O
+in	O
+angina	B-Disease
+pectoris	I-Disease
+.	O
+
+Omeprazole	B-Chemical
+treats	O
+gastroesophageal	B-Disease
+reflux	I-Disease
+disease	I-Disease
+and	O
+ulcers	B-Disease
+.	O
+
+Zinc	B-Chemical
+lozenges	O
+may	O
+reduce	O
+common	B-Disease
+cold	I-Disease
+duration	O
+slightly	O
+.	O
+
+Activated	O
+charcoal	B-Chemical
+absorbs	O
+toxins	O
+in	O
+poisoning	O
+cases	O
+.	O
+
+Combination	O
+therapy	O
+with	O
+aspirin	B-Chemical
+and	O
+clopidogrel	B-Chemical
+prevents	O
+stroke	B-Disease
+recurrence	O
+.	O
+
+Immunosuppression	O
+with	O
+tacrolimus	B-Chemical
+and	O
+mycophenolate	B-Chemical
+prevents	O
+transplant	O
+rejection	O
+.	O
+
+TNF	B-Chemical
+inhibitors	O
+revolutionized	O
+rheumatoid	B-Disease
+arthritis	I-Disease
+treatment	O
+.	O
+
+ACE	O
+inhibitors	O
+block	O
+angiotensin	B-Chemical
+converting	O
+enzyme	O
+activity	O
+.	O
+
+Thyroid	B-Chemical
+hormone	I-Chemical
+replacement	O
+treats	O
+hypothyroidism	B-Disease
+effectively	O
+.	O
+
+Aspirin	B-Chemical
+is	O
+commonly	O
+used	O
+to	O
+treat	O
+headaches	B-Disease
+and	O
+reduce	O
+fever	B-Disease
+.	O
+
+Penicillin	B-Chemical
+allergies	O
+can	O
+trigger	O
+anaphylaxis	B-Disease
+in	O
+sensitive	O
+patients	O
+.	O
+
+MRI	O
+revealed	O
+multiple	O
+brain	O
+lesions	O
+consistent	O
+with	O
+stroke	B-Disease
+.	O
+
+Systemic	B-Disease
+lupus	I-Disease
+erythematosus	I-Disease
+is	O
+an	O
+autoimmune	O
+condition	O
+.	O
+
+Serotonin	B-Chemical
+reuptake	O
+inhibitors	O
+increase	O
+synaptic	O
+serotonin	O
+.	O
+
+Lithium	B-Chemical
+toxicity	O
+presents	O
+with	O
+tremor	B-Disease
+and	O
+confusion	B-Disease
+.	O
+
+Cancer	B-Disease
+immunotherapy	O
+uses	O
+pembrolizumab	B-Chemical
+and	O
+nivolumab	B-Chemical
+checkpoint	O
+inhibitors	O
+.	O
+
+NSAIDs	B-Chemical
+inhibit	O
+cyclooxygenase	B-Chemical
+reducing	O
+prostaglandin	B-Chemical
+synthesis	O
+.	O
+
+Biopsy	O
+confirmed	O
+adenocarcinoma	B-Disease
+of	O
+the	O
+lung	O
+tissue	O
+.	O
+
+Calcium	B-Chemical
+channel	O
+blockers	O
+prevent	O
+calcium	O
+influx	O
+in	O
+cardiac	O
+cells	O
+.	O
+
+Levodopa	B-Chemical
+remains	O
+the	O
+gold	O
+standard	O
+for	O
+Parkinson	B-Disease
+disease	I-Disease
+.	O
+
+Albuterol	B-Chemical
+inhalers	O
+quickly	O
+relieve	O
+acute	O
+asthma	B-Disease
+symptoms	O
+.	O
+
+CT	O
+scan	O
+identified	O
+acute	O
+appendicitis	B-Disease
+requiring	O
+surgery	O
+.	O
+
+Combination	O
+inhaler	O
+contains	O
+fluticasone	B-Chemical
+and	O
+salmeterol	B-Chemical
+for	O
+asthma	B-Disease
+.	O
+
+Laboratory	O
+tests	O
+revealed	O
+hypoglycemia	B-Disease
+and	O
+ketoacidosis	B-Disease
+.	O
+
+Folic	B-Chemical
+acid	I-Chemical
+supplementation	O
+prevents	O
+neural	B-Disease
+tube	I-Disease
+defects	I-Disease
+.	O
+
+Alzheimer	B-Disease
+disease	I-Disease
+causes	O
+progressive	O
+memory	B-Disease
+loss	I-Disease
+and	O
+dementia	B-Disease
+.	O
+
+Prolonged	O
+corticosteroid	B-Chemical
+use	O
+leads	O
+to	O
+osteoporosis	B-Disease
+risk	O
+.	O
+
+Opioid	B-Chemical
+medications	O
+carry	O
+significant	O
+addiction	B-Disease
+risk	O
+.	O
+
+Statins	B-Chemical
+may	O
+cause	O
+muscle	O
+pain	O
+known	O
+as	O
+myopathy	B-Disease
+.	O
+
+Amphotericin	B-Chemical
+B	I-Chemical
+is	O
+associated	O
+with	O
+infusion-related	O
+reactions	O
+.	O
+
+Chest	O
+X-ray	O
+confirmed	O
+bilateral	O
+pneumonia	B-Disease
+infiltrates	O
+.	O
+
+The	O
+patient	O
+presented	O
+with	O
+fever	B-Disease
+and	O
+elevated	O
+white	O
+blood	O
+cells	O
+.	O
+
+Naloxone	B-Chemical
+rapidly	O
+reverses	O
+opioid	O
+overdose	B-Disease
+effects	O
+.	O
+
+Vitamin	B-Chemical
+D	I-Chemical
+supplementation	O
+prevents	O
+rickets	B-Disease
+in	O
+children	O
+.	O
+
+Sepsis	B-Disease
+management	O
+includes	O
+antibiotics	B-Chemical
+fluids	O
+and	O
+vasopressors	B-Chemical
+.	O
+
+Potassium	B-Chemical
+chloride	I-Chemical
+corrects	O
+hypokalemia	B-Disease
+in	O
+hospitalized	O
+patients	O
+.	O
+
+Iron	B-Chemical
+deficiency	O
+leads	O
+to	O
+microcytic	O
+anemia	B-Disease
+symptoms	O
+.	O
+
+Migraine	B-Disease
+headaches	B-Disease
+are	O
+often	O
+preceded	O
+by	O
+visual	O
+aura	O
+.	O
+
+Beta	O
+blockers	O
+reduce	O
+heart	O
+rate	O
+by	O
+blocking	O
+catecholamine	B-Chemical
+effects	O
+.	O
+

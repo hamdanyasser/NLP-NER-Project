@@ -1,0 +1,218 @@
+# ============================================================================
+# BiLSTM-CRF NER Configuration
+# ============================================================================
+# Complete configuration for the Named Entity Recognition system.
+# Built from scratch for NLP Course Project - BC5CDR Biomedical NER.
+#
+# Features:
+# - BiLSTM encoder with CRF decoder
+# - Character-level CNN with highway networks
+# - Multi-head self-attention
+# - Pre-trained GloVe embeddings
+# - Learning rate warmup
+# - Class weight balancing
+# - TensorBoard logging
+# ============================================================================
+
+# ============================================================================
+# Data Paths
+# ============================================================================
+data:
+  # Raw BC5CDR data (PubTator format)
+  raw_dir: "data/raw"
+
+  # Processed data (BIO format)
+  processed_dir: "data/processed"
+
+  # Train/dev/test splits
+  train_file: "data/processed/train.txt"
+  dev_file: "data/processed/dev.txt"
+  test_file: "data/processed/test.txt"
+
+  # BC5CDR specific paths (for parser)
+  bc5cdr_train: "data/raw/CDR_TrainingSet.PubTator.txt"
+  bc5cdr_dev: "data/raw/CDR_DevelopmentSet.PubTator.txt"
+  bc5cdr_test: "data/raw/CDR_TestSet.PubTator.txt"
+
+# ============================================================================
+# Model Artifacts
+# ============================================================================
+artifacts:
+  save_dir: "artifacts"
+  vocab_file: "artifacts/vocab.pkl"
+  model_checkpoint: "artifacts/best_model.pt"
+
+# ============================================================================
+# Model Architecture
+# ============================================================================
+model:
+  # ----- Word Embedding Settings -----
+  embedding_dim: 100              # Dimension of word embeddings
+
+  # Pre-trained embeddings (GloVe)
+  use_pretrained_embeddings: false
+  pretrained_embedding_path: "data/embeddings/glove.6B.100d.txt"
+  freeze_embeddings: false        # Whether to freeze pre-trained embeddings
+
+  # ----- BiLSTM Settings -----
+  hidden_size: 256                # Hidden size per direction (total = 512)
+  num_layers: 2                   # Number of LSTM layers
+  dropout: 0.5                    # Dropout rate
+  bidirectional: true             # Always true for BiLSTM-CRF
+
+  # ----- Character-Level Features -----
+  use_char_features: true         # Enable character CNN
+  char_embedding_dim: 30          # Character embedding dimension
+  char_hidden_size: 50            # Output size of character CNN
+  char_kernel_sizes: [2, 3, 4]    # Multi-scale kernel sizes
+  max_word_length: 20             # Maximum word length for char features
+  use_highway: true               # Use highway networks in char CNN
+
+  # ----- Self-Attention -----
+  use_attention: true             # Enable self-attention after BiLSTM
+  attention_heads: 4              # Number of attention heads
+  attention_dropout: 0.1          # Attention dropout
+
+  # ----- CRF Settings -----
+  use_crf: true                   # Set to false for baseline (softmax) model
+
+# ============================================================================
+# Training Parameters
+# ============================================================================
+training:
+  batch_size: 16
+  learning_rate: 0.001
+  num_epochs: 10
+  optimizer: "adamw"              # Options: adam, sgd, adamw
+  weight_decay: 0.01              # L2 regularization
+
+  # ----- Learning Rate Scheduling -----
+  use_lr_scheduler: true
+  lr_scheduler: "step"            # Options: step, plateau, cosine
+  lr_step_size: 10
+  lr_gamma: 0.1
+
+  # ----- Learning Rate Warmup -----
+  use_warmup: true                # Enable linear warmup
+  warmup_epochs: 2                # Number of warmup epochs
+
+  # ----- Class Weight Balancing -----
+  use_class_weights: false        # Enable inverse frequency weights
+
+  # ----- Gradient Clipping -----
+  gradient_clip: 5.0
+
+  # ----- Early Stopping -----
+  early_stopping: true
+  patience: 5
+
+  # ----- Checkpointing -----
+  save_best_only: true
+  metric_for_best: "f1"           # Options: f1, precision, recall, loss
+
+# ============================================================================
+# Evaluation Parameters
+# ============================================================================
+evaluation:
+  batch_size: 64
+  output_predictions: true
+  predictions_file: "reports/predictions.txt"
+
+# ============================================================================
+# Data Preprocessing
+# ============================================================================
+preprocessing:
+  lowercase: false                # Keep original case for biomedical terms
+  min_word_freq: 1                # Minimum word frequency for vocabulary
+  max_seq_length: 128             # Maximum sequence length
+
+# ============================================================================
+# Random Seeds (for reproducibility)
+# ============================================================================
+random_seed: 42
+
+# ============================================================================
+# Device Configuration
+# ============================================================================
+device: "auto"                    # Options: cuda, cpu, auto
+
+# ============================================================================
+# Logging Configuration
+# ============================================================================
+logging:
+  log_level: "INFO"
+  log_interval: 10                # Log every N batches
+  use_tensorboard: false          # Enable TensorBoard logging
+  tensorboard_dir: "runs"
+  checkpoint_interval: 5          # Save checkpoint every N epochs
+
+# ============================================================================
+# Entity Types (BC5CDR)
+# ============================================================================
+entity_types:
+  - "Chemical"
+  - "Disease"
+
+# ============================================================================
+# Special Tokens
+# ============================================================================
+special_tokens:
+  pad_token: "<PAD>"
+  unk_token: "<UNK>"
+
+# ============================================================================
+# BIO Tags (auto-generated during training)
+# ============================================================================
+tags:
+  - "<PAD>"                       # Padding tag (index 0)
+  - "O"                           # Outside any entity
+  - "B-Chemical"                  # Beginning of Chemical entity
+  - "I-Chemical"                  # Inside Chemical entity
+  - "B-Disease"                   # Beginning of Disease entity
+  - "I-Disease"                   # Inside Disease entity
+
+# ============================================================================
+# Ablation Study Settings
+# ============================================================================
+ablation:
+  # Model variants for comparison
+  variants:
+    - name: "BiLSTM_only"
+      use_crf: false
+      use_char_features: false
+      use_attention: false
+      use_pretrained_embeddings: false
+
+    - name: "BiLSTM_CRF"
+      use_crf: true
+      use_char_features: false
+      use_attention: false
+      use_pretrained_embeddings: false
+
+    - name: "BiLSTM_CRF_CharCNN"
+      use_crf: true
+      use_char_features: true
+      use_attention: false
+      use_pretrained_embeddings: false
+
+    - name: "BiLSTM_CRF_Attention"
+      use_crf: true
+      use_char_features: false
+      use_attention: true
+      use_pretrained_embeddings: false
+
+    - name: "Full_model"
+      use_crf: true
+      use_char_features: true
+      use_attention: true
+      use_pretrained_embeddings: false
+
+    - name: "Full_model_GloVe"
+      use_crf: true
+      use_char_features: true
+      use_attention: true
+      use_pretrained_embeddings: true
+
+  # Number of runs per variant
+  num_runs: 3
+  seeds: [42, 123, 456]

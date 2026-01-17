@@ -1,0 +1,147 @@
+Crohn	B-Disease
+disease	I-Disease
+causes	O
+intestinal	O
+inflammation	B-Disease
+and	O
+pain	O
+.	O
+
+Vancomycin	B-Chemical
+can	O
+cause	O
+red	B-Disease
+man	I-Disease
+syndrome	I-Disease
+during	O
+infusion	O
+.	O
+
+Ibuprofen	B-Chemical
+provides	O
+relief	O
+from	O
+arthritis	B-Disease
+pain	O
+and	O
+inflammation	B-Disease
+.	O
+
+Multiple	B-Disease
+sclerosis	I-Disease
+affects	O
+the	O
+central	O
+nervous	O
+system	O
+myelin	O
+.	O
+
+Chemotherapy	O
+regimens	O
+often	O
+include	O
+cyclophosphamide	B-Chemical
+and	O
+doxorubicin	B-Chemical
+.	O
+
+Patients	O
+taking	O
+warfarin	B-Chemical
+should	O
+avoid	O
+vitamin	B-Chemical
+K	I-Chemical
+rich	O
+foods	O
+.	O
+
+Triple	O
+therapy	O
+includes	O
+omeprazole	B-Chemical
+amoxicillin	B-Chemical
+and	O
+clarithromycin	B-Chemical
+for	O
+H.	O
+pylori	O
+.	O
+
+Epilepsy	B-Disease
+is	O
+characterized	O
+by	O
+recurrent	O
+seizure	B-Disease
+episodes	O
+.	O
+
+Parkinson	B-Disease
+disease	I-Disease
+is	O
+characterized	O
+by	O
+tremor	B-Disease
+and	O
+bradykinesia	B-Disease
+.	O
+
+Prednisone	B-Chemical
+suppresses	O
+the	O
+immune	O
+response	O
+in	O
+autoimmune	B-Disease
+disorders	I-Disease
+.	O
+
+HAART	O
+combines	O
+multiple	O
+antiretroviral	B-Chemical
+drugs	O
+for	O
+HIV	B-Disease
+treatment	O
+.	O
+
+Methotrexate	B-Chemical
+therapy	O
+requires	O
+monitoring	O
+for	O
+bone	B-Disease
+marrow	I-Disease
+suppression	I-Disease
+.	O
+
+Gabapentin	B-Chemical
+helps	O
+manage	O
+neuropathic	B-Disease
+pain	I-Disease
+and	O
+seizures	B-Disease
+.	O
+
+Insulin	B-Chemical
+therapy	O
+maintains	O
+glucose	B-Chemical
+control	O
+in	O
+diabetes	B-Disease
+mellitus	I-Disease
+.	O
+
+Acetaminophen	B-Chemical
+overdose	O
+can	O
+cause	O
+severe	O
+hepatotoxicity	B-Disease
+.	O
+

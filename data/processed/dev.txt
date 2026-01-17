@@ -1,0 +1,106 @@
+Antihistamines	O
+block	O
+histamine	B-Chemical
+receptors	O
+reducing	O
+allergic	O
+symptoms	O
+.	O
+
+Treatment	O
+of	O
+tuberculosis	B-Disease
+requires	O
+rifampin	B-Chemical
+isoniazid	B-Chemical
+and	O
+pyrazinamide	B-Chemical
+.	O
+
+Thrombolytics	O
+dissolve	O
+fibrin	B-Chemical
+clots	O
+in	O
+acute	O
+myocardial	B-Disease
+infarction	I-Disease
+.	O
+
+Metformin	B-Chemical
+is	O
+the	O
+first-line	O
+treatment	O
+for	O
+type	B-Disease
+2	I-Disease
+diabetes	I-Disease
+.	O
+
+Magnesium	B-Chemical
+sulfate	I-Chemical
+prevents	O
+seizures	B-Disease
+in	O
+preeclampsia	B-Disease
+patients	O
+.	O
+
+Sodium	B-Chemical
+bicarbonate	I-Chemical
+treats	O
+metabolic	B-Disease
+acidosis	I-Disease
+in	O
+critical	O
+care	O
+.	O
+
+Dual	O
+antiplatelet	O
+therapy	O
+reduces	O
+coronary	B-Disease
+artery	I-Disease
+disease	I-Disease
+events	O
+.	O
+
+Amoxicillin	B-Chemical
+is	O
+prescribed	O
+for	O
+bacterial	O
+pneumonia	B-Disease
+treatment	O
+.	O
+
+ECG	O
+showed	O
+atrial	B-Disease
+fibrillation	I-Disease
+with	O
+rapid	O
+ventricular	O
+response	O
+.	O
+
+Proton	O
+pump	O
+inhibitors	O
+reduce	O
+gastric	O
+acid	B-Chemical
+secretion	O
+.	O
+
+Lumbar	O
+puncture	O
+showed	O
+elevated	O
+protein	O
+suggesting	O
+meningitis	B-Disease
+.	O
+
