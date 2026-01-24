@@ -57,8 +57,6 @@ class TestCRF:
         assert crf.num_tags == 5
         assert crf.pad_idx == 0
         assert crf.transitions.shape == (5, 5)
-        assert crf.start_transitions.shape == (5,)
-        assert crf.end_transitions.shape == (5,)
 
     def test_crf_forward_returns_scalar(self, crf, sample_emissions, sample_tags, sample_mask):
         """Test forward pass returns a scalar loss."""
@@ -164,8 +162,6 @@ class TestCRF:
 
         # Zero out transitions to make path predictable
         crf.transitions.data.zero_()
-        crf.start_transitions.data.zero_()
-        crf.end_transitions.data.zero_()
 
         # Create emissions that strongly favor specific tags
         emissions = torch.zeros(1, 3, 3)
@@ -195,8 +191,6 @@ class TestCRFGradients:
         # Check gradients exist
         assert emissions.grad is not None
         assert crf.transitions.grad is not None
-        assert crf.start_transitions.grad is not None
-        assert crf.end_transitions.grad is not None
 
     def test_gradient_non_zero(self):
         """Test gradients are non-zero."""

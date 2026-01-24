@@ -26,8 +26,10 @@ class TestVocabulary:
     @pytest.fixture
     def vocab(self):
         """Create a vocabulary instance."""
-        tokens = ['the', 'cat', 'sat', 'on', 'mat', 'the', 'cat']
-        return Vocabulary.build_from_tokens(tokens, min_freq=1)
+        tokens = [['the', 'cat', 'sat', 'on', 'mat'], ['the', 'cat']]
+        v = Vocabulary(min_freq=1)
+        v.build_vocab(tokens)
+        return v
 
     def test_vocab_size(self, vocab):
         """Test vocabulary has correct size."""
@@ -71,8 +73,9 @@ class TestVocabulary:
 
     def test_min_freq_filtering(self):
         """Test min_freq filters rare tokens."""
-        tokens = ['common', 'common', 'common', 'rare']
-        vocab = Vocabulary.build_from_tokens(tokens, min_freq=2)
+        tokens = [['common', 'common', 'common', 'rare']]
+        vocab = Vocabulary(min_freq=2)
+        vocab.build_vocab(tokens)
 
         assert 'common' in vocab
         assert 'rare' not in vocab
@@ -103,8 +106,10 @@ class TestLabelVocabulary:
     @pytest.fixture
     def label_vocab(self):
         """Create a label vocabulary instance."""
-        labels = ['O', 'B-Chemical', 'I-Chemical', 'B-Disease', 'I-Disease', 'O']
-        return LabelVocabulary.build_from_labels(labels)
+        labels = [['O', 'B-Chemical', 'I-Chemical', 'B-Disease', 'I-Disease', 'O']]
+        v = LabelVocabulary()
+        v.build_vocab(labels)
+        return v
 
     def test_label_vocab_size(self, label_vocab):
         """Test label vocabulary has correct size."""
@@ -147,13 +152,15 @@ class TestCharVocabulary:
     @pytest.fixture
     def char_vocab(self):
         """Create a character vocabulary instance."""
-        tokens = ['hello', 'world', 'test']
-        return CharVocabulary.build_from_tokens(tokens)
+        tokens = [['hello', 'world', 'test']]
+        v = CharVocabulary()
+        v.build_vocab(tokens)
+        return v
 
     def test_char_vocab_size(self, char_vocab):
         """Test character vocabulary has correct size."""
         # PAD, UNK + unique characters
-        unique_chars = set('helloworld')  # 'test' chars are in 'hello'
+        unique_chars = set('helloworldtest')
         assert len(char_vocab) >= len(unique_chars) + 2
 
     def test_encode_word(self, char_vocab):
@@ -188,9 +195,8 @@ class TestCharVocabulary:
 
     def test_unknown_char(self, char_vocab):
         """Test unknown characters map to UNK."""
-        # Assuming special characters might be unknown
+        # The characters in 'hello' should be known
         encoded = char_vocab.encode_word('hello')
-        # The characters should be known
         assert all(idx != char_vocab.unk_idx for idx in encoded)
 
 
